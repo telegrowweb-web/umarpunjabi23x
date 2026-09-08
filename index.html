@@ -1,0 +1,570 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umar Punjabi – Free Telegram</title>
+<meta name="description" content="Join thousands of traders learning price action, risk management and daily forex insights. 100% Free Telegram Channel.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+<style>
+:root {
+  --blue: #1A6FE8;
+  --blue-light: #EBF2FF;
+  --blue-mid: #D0E4FF;
+  --green: #0DB96A;
+  --green-light: #E6F9F1;
+  --amber: #F59E0B;
+  --amber-light: #FEF3C7;
+  --text: #0F172A;
+  --muted: #64748B;
+  --border: #E2E8F0;
+  --bg: #F8FAFC;
+  --white: #FFFFFF;
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 24px 16px 48px;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(24px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes scalePop {
+  0%   { opacity:0; transform:scale(0.85); }
+  70%  { transform:scale(1.04); }
+  100% { opacity:1; transform:scale(1); }
+}
+@keyframes slideRight {
+  from { opacity:0; transform:translateX(-16px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes float {
+  0%,100% { transform:translateY(0px); }
+  50%      { transform:translateY(-6px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:0.5; transform:scale(1.4); }
+}
+@keyframes countUp {
+  from { opacity:0; transform:scale(0.7); }
+  to   { opacity:1; transform:scale(1); }
+}
+@keyframes barGrow {
+  from { width: 0; }
+}
+@keyframes ringPing {
+  0%   { transform:scale(1); opacity:0.7; }
+  100% { transform:scale(2.2); opacity:0; }
+}
+
+.page {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--green-light);
+  border: 1px solid rgba(13,185,106,0.25);
+  border-radius: 50px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #057a47;
+  margin-bottom: 22px;
+  animation: fadeUp 0.5s 0.1s both;
+  letter-spacing: 0.04em;
+}
+.live-dot-wrap {
+  position: relative;
+  width: 8px; height: 8px;
+}
+.live-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: pulse 1.6s infinite;
+  position: relative; z-index: 1;
+}
+.live-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--green);
+  animation: ringPing 1.6s infinite;
+}
+
+.hero-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px 24px 24px;
+  text-align: center;
+  margin-bottom: 14px;
+  animation: fadeUp 0.55s 0.15s both;
+  box-shadow: 0 4px 24px rgba(26,111,232,0.06), 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.logo-ring {
+  position: relative;
+  width: 80px; height: 80px;
+  margin: 0 auto 18px;
+  animation: scalePop 0.6s 0.3s both;
+}
+.logo-ring img {
+  width: 80px; height: 80px;
+  border-radius: 20px;
+  object-fit: cover;
+  position: relative; z-index: 1;
+  border: 2px solid var(--border);
+}
+.logo-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 24px;
+  background: conic-gradient(var(--blue), #34d399, #f59e0b, var(--blue));
+  animation: float 3s ease-in-out infinite;
+  z-index: 0;
+  opacity: 0.5;
+}
+.logo-ring::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  background: var(--white);
+  z-index: 0;
+}
+
+.hero-card h1 {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.18;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+.hero-card h1 .accent { color: var(--blue); }
+
+.hero-card .tagline {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 22px;
+}
+.proof-strip .p-item {
+  background: var(--blue-light);
+  border-radius: var(--radius-sm);
+  padding: 12px 8px;
+  text-align: center;
+  animation: countUp 0.5s calc(0.5s + var(--d)) both;
+}
+.proof-strip .p-num {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--blue);
+  line-height: 1;
+}
+.proof-strip .p-lbl {
+  font-size: 10px;
+  color: #3b6fcf;
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+.cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--blue);
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 17px 20px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s;
+  box-shadow: 0 8px 28px rgba(26,111,232,0.32);
+  position: relative;
+  overflow: hidden;
+}
+.cta-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
+  background-size: 200% auto;
+  animation: shimmer 2.4s linear infinite;
+}
+.cta-btn:hover { transform: scale(1.04); box-shadow: 0 12px 36px rgba(26,111,232,0.42); }
+.cta-btn:active { transform: scale(0.98); }
+.cta-btn svg { width:20px; height:20px; flex-shrink:0; }
+
+.free-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+  animation: fadeUp 0.5s 0.4s both;
+}
+
+.feat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.feat-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 13px 15px;
+  animation: slideRight 0.45s calc(0.45s + var(--d)) both;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.feat-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(26,111,232,0.1);
+  border-color: var(--blue-mid);
+}
+
+.feat-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.feat-text { flex: 1; }
+.feat-text strong { font-size: 13.5px; font-weight: 700; display: block; color: var(--text); }
+.feat-text span   { font-size: 12px; color: var(--muted); line-height: 1.4; }
+
+.feat-check {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--green-light);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.feat-check svg { width:11px; height:11px; }
+
+.bars-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 18px 16px;
+  margin-bottom: 14px;
+  animation: fadeUp 0.5s 0.7s both;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+.bar-row { margin-bottom: 13px; }
+.bar-row:last-child { margin-bottom: 0; }
+.bar-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.bar-top .bar-lbl { color: var(--text); }
+.bar-top .bar-val { color: var(--muted); }
+.bar-track {
+  height: 7px;
+  background: var(--bg);
+  border-radius: 50px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 50px;
+  animation: barGrow 1.2s cubic-bezier(0.22,1,0.36,1) calc(0.8s + var(--d)) both;
+}
+
+.timer-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  animation: fadeUp 0.5s 0.85s both;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+.timer-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #b45309;
+  margin-bottom: 12px;
+}
+.timer-boxes { display: flex; gap: 8px; }
+.t-box {
+  flex: 1;
+  background: var(--amber-light);
+  border: 1px solid rgba(245,158,11,0.2);
+  border-radius: var(--radius-sm);
+  padding: 10px 8px;
+  text-align: center;
+}
+.t-num {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--amber);
+  line-height: 1;
+}
+.t-lbl {
+  font-size: 10px;
+  font-weight: 700;
+  color: #92400e;
+  margin-top: 3px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.disclaimer {
+  text-align: center;
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.7;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  animation: fadeUp 0.5s 1s both;
+}
+.disclaimer a { color: var(--blue); text-decoration: none; }
+.credit {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748B;
+}
+.credit a { color: var(--blue); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="live-badge">
+    <span class="live-dot-wrap">
+      <span class="live-ring"></span>
+      <span class="live-dot"></span>
+    </span>
+    CHANNEL LIVE &amp; ACTIVE
+  </div>
+
+  <div class="hero-card">
+    <div class="logo-ring">
+      <img src="https://i.ibb.co/YB3FjwBK/ummmaswr.jpg" alt="Umar Punjabi">
+    </div>
+    <h1>Trade Smarter with<br><span class="accent">Umar Punjabi</span></h1>
+    <p class="tagline">Free daily analysis, price action setups &amp; risk management — for beginners to advanced traders.</p>
+
+    <div class="proof-strip">
+      <div class="p-item" style="--d:0.05s">
+        <div class="p-num">30K+</div>
+        <div class="p-lbl">Members</div>
+      </div>
+      <div class="p-item" style="--d:0.12s">
+        <div class="p-num">Daily</div>
+        <div class="p-lbl">Signals</div>
+      </div>
+      <div class="p-item" style="--d:0.19s">
+        <div class="p-num">FREE</div>
+        <div class="p-lbl">Always</div>
+      </div>
+    </div>
+
+    <a href="https://t.me/+V7Pv9fHbbmw1MzQ1" target="_blank" class="cta-btn" id="join-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+      Join Free Telegram Now
+    </a>
+    <div class="free-tag">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      100% Free — No card required
+    </div>
+  </div>
+
+  <div class="section-label">What you'll get inside</div>
+  <div class="feat-list">
+    <div class="feat-item" style="--d:0s">
+      <div class="feat-icon" style="background:#EBF2FF;">📊</div>
+      <div class="feat-text">
+        <strong>Daily Market Analysis</strong>
+        <span>Forex pair breakdowns every morning before open</span>
+      </div>
+      <div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="#0DB96A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+    </div>
+    <div class="feat-item" style="--d:0.07s">
+      <div class="feat-icon" style="background:#F0FDF4;">🎯</div>
+      <div class="feat-text">
+        <strong>Price Action Setups</strong>
+        <span>Clear entry, SL &amp; TP with chart screenshots</span>
+      </div>
+      <div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="#0DB96A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+    </div>
+    <div class="feat-item" style="--d:0.14s">
+      <div class="feat-icon" style="background:#FEF3C7;">🛡️</div>
+      <div class="feat-text">
+        <strong>Risk Management Training</strong>
+        <span>Protect your capital before anything else</span>
+      </div>
+      <div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="#0DB96A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+    </div>
+    <div class="feat-item" style="--d:0.21s">
+      <div class="feat-icon" style="background:#F5F3FF;">📚</div>
+      <div class="feat-text">
+        <strong>Beginner to Advanced</strong>
+        <span>Structured education for all experience levels</span>
+      </div>
+      <div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="#0DB96A" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+    </div>
+  </div>
+
+  <div class="bars-card">
+    <div class="bar-row">
+      <div class="bar-top"><span class="bar-lbl">Trade Accuracy</span><span class="bar-val">87%</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:87%; background:var(--blue); --d:0s"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-top"><span class="bar-lbl">Member Satisfaction</span><span class="bar-val">95%</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:95%; background:var(--green); --d:0.1s"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-top"><span class="bar-lbl">Beginner Success Rate</span><span class="bar-val">78%</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:78%; background:var(--amber); --d:0.2s"></div></div>
+    </div>
+  </div>
+
+  <div class="timer-card">
+    <div class="timer-top">⚡ Limited open access — closes in</div>
+    <div class="timer-boxes">
+      <div class="t-box">
+        <div class="t-num" id="t-min">09</div>
+        <div class="t-lbl">Minutes</div>
+      </div>
+      <div class="t-box">
+        <div class="t-num" id="t-sec">59</div>
+        <div class="t-lbl">Seconds</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://t.me/+V7Pv9fHbbmw1MzQ1" target="_blank" class="cta-btn" style="margin-bottom:18px; animation: fadeUp 0.5s 0.95s both; display:flex;">
+    <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;flex-shrink:0"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    Join Thousands of Traders Now
+  </a>
+
+  <div class="disclaimer">
+    <p class="credit">Ads by <a href="https://t.me/+TRlJl628l-FkMWE9" target="_blank" rel="noopener">@Nexgroww_agency</a></p>
+    For educational purposes only. Trading involves risk. Capital may be at risk.<br>
+    This site is not part of Facebook™ or Meta Platforms Inc. and is not endorsed by Facebook™.
+  </div>
+
+</div>
+
+<script>
+  let total = 9 * 60 + 59;
+  const mEl = document.getElementById('t-min');
+  const sEl = document.getElementById('t-sec');
+  setInterval(() => {
+    if (total <= 0) { total = 9 * 60 + 59; return; }
+    total--;
+    mEl.textContent = String(Math.floor(total / 60)).padStart(2, '0');
+    sEl.textContent = String(total % 60).padStart(2, '0');
+  }, 1000);
+
+  document.querySelectorAll('.cta-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+    });
+  });
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1422918369250971');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1422918369250971&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '27568790896121776');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=27568790896121776&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</body>
+</html>
